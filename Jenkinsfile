@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PY_IMAGE: "asnashameel/python-image:latest"
+        PY_IMAGE= "asnashameel/python-image:latest"
     }
     stages {
         stage('git checkout') {
