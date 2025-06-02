@@ -43,7 +43,7 @@ pipeline {
                 kubectl create deployment python-deployment --image=$PY_IMAGE --dry-run=client -o yaml >deploy.yaml
                 kubectl apply -f deploy.yaml
                 kubectl delete svc --all
-                kubectl expose deployment python-deployment --name py-svc --port 5001 --target-port 5000 -dry-run=client -o yaml > svc.yaml
+                kubectl expose deployment python-deployment --name py-svc --port 5001 --target-port 5000 --dry-run=client -o yaml > svc.yaml
                 kubectl apply -f svc.yaml
                 '''
             }
