@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git branch: "main", url: "https://github.com/asnashameel/multiple-branch-python"
+                git branch: "main", url: "https://github.com/asnashameel/multiple-branch-python.git"
             }
         }
         stage('docker build and push') {
