@@ -17,7 +17,7 @@ pipeline {
                     docker login -u $USER_NAME -p $PASSWD
                     docker push $PY_IMAGE
                     
-                    if docker ps -a | grep 'python-container';
+                    if docker ps -a | grep 'python-container'; then
                         docker stop python-container
                         docker rm python-container
                     fi
