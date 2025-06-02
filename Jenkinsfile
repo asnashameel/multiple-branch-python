@@ -1,3 +1,4 @@
+@Library('python-library') _
 pipeline {
     agent any
     environment {
@@ -24,6 +25,14 @@ pipeline {
                     
                     docker run -d -p 5001:5000 --name python-container $PY_IMAGE
                     '''
+                }
+            }
+        }
+         stage('run pytest') {
+            steps {
+                script {
+                    build()
+                    echo "test done succesfully"
                 }
             }
         }
